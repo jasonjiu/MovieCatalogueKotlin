@@ -3,47 +3,42 @@ package com.example.moviecataloguekotlin
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
 import kotlinx.android.synthetic.main.cv_movie.view.*
 
-class MovieAdapter (private val listMovie: ArrayList<Movie>) : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
+class TvAdapter (private val listTv : ArrayList<Tv>): RecyclerView.Adapter<TvAdapter.TvViewHolder>() {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TvViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.cv_movie, parent, false)
-        return MovieViewHolder(view)
+        return TvViewHolder(view)
     }
 
-    override fun getItemCount(): Int = listMovie.size
+    override fun getItemCount(): Int = listTv.size
 
-    override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
-        holder.bind(listMovie[position])
+    override fun onBindViewHolder(holder: TvViewHolder, position: Int) {
+        holder.bind(listTv[position])
     }
 
-    inner class MovieViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-        fun bind(movie: Movie){
+    inner class TvViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
+        fun bind(tv: Tv){
             with(itemView){
                 Glide.with(itemView.context)
-                    .load(movie.moviePoster)
+                    .load(tv.tvPoster)
                     .apply(RequestOptions.skipMemoryCacheOf(true))
                     .apply(RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.NONE))
                     .override(350, 550)
                     .into(ivPoster)
 
-                tvMovieName.text = movie.movieName
-                tvRelease.text = movie.movieRelease
+                tvMovieName.text = tv.tvName
+                tvRelease.text = tv.tvRelease
 
-                btn_fav.setOnClickListener {
-
-                }
-
-                tvDetail.setOnClickListener {
+                tvDetail.setOnClickListener{
 
                 }
-
             }
         }
     }
-
 }
