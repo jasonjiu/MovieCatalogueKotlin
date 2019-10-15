@@ -1,5 +1,7 @@
 package com.example.moviecataloguekotlin
 
+import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +12,7 @@ import com.bumptech.glide.request.RequestOptions
 import kotlinx.android.synthetic.main.cv_movie.view.*
 
 class MovieAdapter (private val listMovie: ArrayList<Movie>) : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.cv_movie, parent, false)
         return MovieViewHolder(view)
@@ -34,12 +37,17 @@ class MovieAdapter (private val listMovie: ArrayList<Movie>) : RecyclerView.Adap
                 tvMovieName.text = movie.movieName
                 tvRelease.text = movie.movieRelease
 
+                var position =  adapterPosition
+
                 btn_fav.setOnClickListener {
 
                 }
 
                 tvDetail.setOnClickListener {
-
+                    val intent = Intent(itemView.context, DetailActivity::class.java)
+                    intent.putExtra(DetailActivity.EXTRA_MOVIE, listMovie[position])
+                    intent.putExtra("DATA", "movie")
+                    itemView.context.startActivity(intent)
                 }
 
             }

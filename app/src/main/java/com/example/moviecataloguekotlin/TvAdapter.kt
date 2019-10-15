@@ -1,5 +1,6 @@
 package com.example.moviecataloguekotlin
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,6 +12,7 @@ import com.bumptech.glide.request.RequestOptions
 import kotlinx.android.synthetic.main.cv_movie.view.*
 
 class TvAdapter (private val listTv : ArrayList<Tv>): RecyclerView.Adapter<TvAdapter.TvViewHolder>() {
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TvViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.cv_movie, parent, false)
         return TvViewHolder(view)
@@ -36,7 +38,10 @@ class TvAdapter (private val listTv : ArrayList<Tv>): RecyclerView.Adapter<TvAda
                 tvRelease.text = tv.tvRelease
 
                 tvDetail.setOnClickListener{
-
+                    val intent = Intent(itemView.context, DetailActivity::class.java)
+                    intent.putExtra(DetailActivity.EXTRA_MOVIE, listTv[adapterPosition])
+                    intent.putExtra("DATA", "tv")
+                    itemView.context.startActivity(intent)
                 }
             }
         }
