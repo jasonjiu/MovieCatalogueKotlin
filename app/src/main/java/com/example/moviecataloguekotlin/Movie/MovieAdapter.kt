@@ -1,7 +1,6 @@
-package com.example.moviecataloguekotlin
+package com.example.moviecataloguekotlin.Movie
 
 import android.content.Intent
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,6 +8,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
+import com.example.moviecataloguekotlin.DetailActivity
+import com.example.moviecataloguekotlin.Model.Movie
+import com.example.moviecataloguekotlin.R
 import kotlinx.android.synthetic.main.cv_movie.view.*
 
 class MovieAdapter (private val listMovie: ArrayList<Movie>) : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {

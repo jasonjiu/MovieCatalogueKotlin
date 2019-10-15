@@ -1,4 +1,4 @@
-package com.example.moviecataloguekotlin
+package com.example.moviecataloguekotlin.Tv
 
 import android.content.Intent
 import android.view.LayoutInflater
@@ -9,6 +9,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
+import com.example.moviecataloguekotlin.DetailActivity
+import com.example.moviecataloguekotlin.R
+import com.example.moviecataloguekotlin.Model.Tv
 import kotlinx.android.synthetic.main.cv_movie.view.*
 
 class TvAdapter (private val listTv : ArrayList<Tv>): RecyclerView.Adapter<TvAdapter.TvViewHolder>() {

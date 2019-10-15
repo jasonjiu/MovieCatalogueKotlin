@@ -5,6 +5,8 @@ import android.os.Bundle
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
+import com.example.moviecataloguekotlin.Model.Movie
+import com.example.moviecataloguekotlin.Model.Tv
 import kotlinx.android.synthetic.main.activity_detail.*
 
 class DetailActivity : AppCompatActivity() {
