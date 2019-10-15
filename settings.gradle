@@ -1,2 +1,2 @@
-include ':app'
+include ':submission2', ':submission3'
 rootProject.name='MovieCatalogueKotlin'
