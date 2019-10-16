@@ -5,6 +5,8 @@ import android.view.MenuItem
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.example.submission3.Movie.MovieFragment
+import com.example.submission3.Tv.TvFragment
 
 import kotlinx.android.synthetic.main.activity_main.*
 

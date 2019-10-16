@@ -22,8 +22,7 @@
             android:id="@+id/ivPoster"
             android:layout_width="wrap_content"
             android:layout_height="150dp"
-            android:src="@drawable/ic_launcher_background"
-            android:scaleType="fitXY"/>
+            android:src="@drawable/ic_launcher_background"/>
 
         <TextView
             android:id="@+id/tvMovieName"

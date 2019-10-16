@@ -10,6 +10,5 @@ data class Tv (
     var tvScore : String,
     var tvRelease : String,
     var tvPoster : String
-
 )  : Parcelable
 
